@@ -104,7 +104,10 @@ MonoBehaviour:
   minSize: 0.5
   maxSize: 2.5
   SpeedDifference: 2.5
-  speed: 200
+  speed: 100
+  OnDeath:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!58 &7229125507847771947
 CircleCollider2D:
   m_ObjectHideFlags: 0
