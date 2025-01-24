@@ -32,6 +32,8 @@ public class PlayerController : MonoBehaviour , Damageable<DamageLog>
     private SmartSwitch inflateSwitch;
     private Vector2 moveInput;
 
+    private float t = 0f;
+
     // Start is called before the first frame update
 
     void Awake()
@@ -95,13 +97,14 @@ public class PlayerController : MonoBehaviour , Damageable<DamageLog>
             moveInput = InputSystem.Player2.Move.ReadValue<Vector2>();
             inflateSwitch.Update(InputSystem.Player2.Fire.IsPressed());
         }
+        moveInput.x += Mathf.Sin(t)*0.25f;
         moveInput.y = 0; 
     }
 
     void TransfareAir(float rate)
     {
         float amount = rate * Time.deltaTime;
-        if (airAmout - amount < 0)
+        if (airAmout - amount < 0 || airAmout - amount > 200)
         {
             amount = airAmout;
         }
@@ -124,6 +127,7 @@ public class PlayerController : MonoBehaviour , Damageable<DamageLog>
     // Update is called once per frame
     void FixedUpdate()
     {
+        t += Time.deltaTime * Random.Range(15f, 20f);
         if (GameManager.get.state == GameManager.gameState.GAME)
         {
             UpdateMoveInput();
@@ -131,7 +135,7 @@ public class PlayerController : MonoBehaviour , Damageable<DamageLog>
 
             if (inflateSwitch.OnHold())
             {
-                TransfareAir(airTransferRate);
+                otherPlayer.TransfareAir(airTransferRate);
             }
 
             ReletiveVelocity();

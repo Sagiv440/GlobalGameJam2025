@@ -35,7 +35,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 2121579946359049222}
+  - {fileID: 5960621670545450703}
   - {fileID: 3703696033449847079}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -104,16 +104,40 @@ MonoBehaviour:
   controlls: 0
   otherPlayer: {fileID: 0}
   airAmout: 100
-  airTransferRate: 80
+  airTransferRate: 160
   minSize: 0.5
-  maxSize: 2.5
+  maxSize: 1
   SpeedDifference: 2.5
-  speed: 100
+  speed: 40
   OnDeath:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2683587253028667175}
-        m_TargetAssemblyTypeName: UnityEngine.AudioSource, UnityEngine
+      - m_Target: {fileID: 7303052321318921844}
+        m_TargetAssemblyTypeName: UnityEngine.Renderer, UnityEngine
+        m_MethodName: set_enabled
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 6867193775344926256}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 11400000, guid: d9198386c4e2f12469ee1b70b7a02a02, type: 2}
+        m_TargetAssemblyTypeName: ScriptableObjects.SoundEffectSO, Assembly-CSharp
         m_MethodName: Play
         m_Mode: 1
         m_Arguments:
@@ -122,7 +146,7 @@ MonoBehaviour:
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
-          m_BoolArgument: 0
+          m_BoolArgument: 1
         m_CallState: 2
 --- !u!58 &7229125507847771947
 CircleCollider2D:
@@ -282,7 +306,7 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!1001 &5549068146281169519
+--- !u!1001 &201391465158404262
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -292,11 +316,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 5797009771350756969, guid: e9dde92525c72d4418f998271a8a12eb, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 23.11
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5797009771350756969, guid: e9dde92525c72d4418f998271a8a12eb, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -9.6
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5797009771350756969, guid: e9dde92525c72d4418f998271a8a12eb, type: 3}
       propertyPath: m_LocalPosition.z
@@ -334,15 +358,24 @@ PrefabInstance:
       propertyPath: m_Name
       value: WaterPop
       objectReference: {fileID: 0}
+    - target: {fileID: 6739162002498442902, guid: e9dde92525c72d4418f998271a8a12eb, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e9dde92525c72d4418f998271a8a12eb, type: 3}
---- !u!4 &2121579946359049222 stripped
+--- !u!4 &5960621670545450703 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5797009771350756969, guid: e9dde92525c72d4418f998271a8a12eb, type: 3}
-  m_PrefabInstance: {fileID: 5549068146281169519}
+  m_PrefabInstance: {fileID: 201391465158404262}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &6867193775344926256 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6739162002498442902, guid: e9dde92525c72d4418f998271a8a12eb, type: 3}
+  m_PrefabInstance: {fileID: 201391465158404262}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &5702694567794171767
 PrefabInstance:
@@ -352,6 +385,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 2843381220869862152}
     m_Modifications:
+    - target: {fileID: 1267079597435986989, guid: 5daed495700c9704aa1303241b6e48e7, type: 3}
+      propertyPath: moveWithCustomTransform
+      value: 
+      objectReference: {fileID: 3703696033449847079}
     - target: {fileID: 3496877939301618427, guid: 5daed495700c9704aa1303241b6e48e7, type: 3}
       propertyPath: m_Name
       value: WaterTransfer
