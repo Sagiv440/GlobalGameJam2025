@@ -17,9 +17,13 @@ public class GameManager : MonoBehaviour
     public static GameManager get;
     [SerializeField] private FloatVariable PlayerDistance;
     [SerializeField] private float DeathTheashHold = 10f;
+
+    [SerializeField] private float endDelayTime = 2f;
+    [SerializeField] private UnityEvent OnGameStart;
     [SerializeField] private UnityEvent OnGameOver;
     [SerializeField] private UnityEvent OnGameWin;
 
+    SmartSwitch StartSwitch;
     SmartSwitch threshHoldSwitch;
 
     private void Awake()
@@ -32,15 +36,15 @@ public class GameManager : MonoBehaviour
     {
         state = gameState.END;
         Time.timeScale = 0f;
-        OnGameOver.Invoke();
+        StartCoroutine(DelayEnd());
         Debug.Log("Game Over");
     }
 
     public void WinLevel()
     {
         state = gameState.END;
-        Time.timeScale = 0f;
-        OnGameWin.Invoke();
+        //Time.timeScale = 0f;
+        StartCoroutine(DelayGameOver());
         Debug.Log("You Win");
     }
 
@@ -49,11 +53,24 @@ public class GameManager : MonoBehaviour
         if(Input.GetKeyDown("space") && state != gameState.END)
         {
             state = gameState.GAME;
+            OnGameStart.Invoke();
         }
+        StartSwitch.Update(state == gameState.GAME);
         threshHoldSwitch.Update(PlayerDistance.value > DeathTheashHold);
         if (threshHoldSwitch.OnPress())
         {
             GameOver();
         }
+    }
+
+    IEnumerator DelayEnd()
+    {
+        yield return new WaitForSeconds(endDelayTime);
+        OnGameWin.Invoke();
+    }
+    IEnumerator DelayGameOver()
+    {
+        yield return new WaitForSeconds(endDelayTime);
+        OnGameOver.Invoke();
     }
 }
