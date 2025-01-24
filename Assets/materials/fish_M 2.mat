@@ -52,8 +52,10 @@ Material:
     m_Floats:
     - _BUILTIN_QueueControl: 0
     - _BUILTIN_QueueOffset: 0
-    - _PixelAmount: 22.46
-    - _lines: 1.19
+    - _Contrast: 1.21
+    - _Contrast_1: -12.7
+    - _PixelAmount: 15
+    - _lines: 1.18
     - _speed: 0.1
     - _waves: 5
     m_Colors:
