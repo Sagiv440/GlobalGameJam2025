@@ -123,16 +123,18 @@ public class PlayerController : MonoBehaviour , Damageable<DamageLog>
     // Update is called once per frame
     void FixedUpdate()
     {
-        UpdateMoveInput();
-        rb.AddForce(moveInput * speed);
-
-        if(inflateSwitch.OnHold())
+        if (GameManager.get.state == GameManager.gameState.GAME)
         {
-            TransfareAir(50f);
+            UpdateMoveInput();
+            rb.AddForce(moveInput * speed);
+
+            if (inflateSwitch.OnHold())
+            {
+                TransfareAir(50f);
+            }
+
+            ReletiveVelocity();
         }
-
-        ReletiveVelocity();
-
 
     }
 

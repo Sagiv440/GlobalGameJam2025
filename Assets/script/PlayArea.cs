@@ -4,16 +4,18 @@ using UnityEngine;
 
 public class PlayArea : MonoBehaviour
 {
-    public float maxHight = 10f;
     public float speed = 3f;
+    [SerializeField] private FloatVariable curHight;
+    [SerializeField] private FloatReference maxHight;
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         if(GameManager.get.state == GameManager.gameState.GAME)
         {
             transform.position += Vector3.up * speed * Time.deltaTime;
-            if (transform.position.y > maxHight)
+            if(curHight != null) curHight.value = transform.position.y;
+            if (transform.position.y > maxHight.variable.value)
             {
                 GameManager.get.WinLevel();
             }

@@ -51,7 +51,7 @@ public class FollowPlayers : MonoBehaviour
         totalDistance.value = (maxY - minY)*0.5f;
     }
 
-    private void Update()
+    private void FixedUpdate()
     {
         gameSwitch.Update(GameManager.get.state == GameManager.gameState.GAME);
         if (gameSwitch.OnPress())
@@ -76,7 +76,7 @@ public class FollowPlayers : MonoBehaviour
             cam.orthographicSize = Mathf.Lerp(cam.orthographicSize, targetSize, Time.deltaTime);
 
             if (follow)
-                this.transform.position = camTarget.transform.position;
+                this.transform.position = Vector3.Lerp(this.transform.position, camTarget.position, Time.deltaTime *10f);
         }
     }
     IEnumerator Startfollow()
