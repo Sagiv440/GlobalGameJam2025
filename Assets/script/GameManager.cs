@@ -35,8 +35,8 @@ public class GameManager : MonoBehaviour
     public void GameOver()
     {
         state = gameState.END;
-        Time.timeScale = 0f;
-        StartCoroutine(DelayEnd());
+        //Time.timeScale = 0f;
+        StartCoroutine(DelayGameOver());
         Debug.Log("Game Over");
     }
 
@@ -44,7 +44,7 @@ public class GameManager : MonoBehaviour
     {
         state = gameState.END;
         //Time.timeScale = 0f;
-        StartCoroutine(DelayGameOver());
+        StartCoroutine(DelayEnd());
         Debug.Log("You Win");
     }
 
