@@ -13,16 +13,17 @@ public class PlayerController : MonoBehaviour
 
     [Header("Air System")]
     [SerializeField] private PlayerController otherPlayer;
-    [SerializeField] private float airAmout = 100f;
+    [SerializeField] public float airAmout = 100f;
     [SerializeField] private float minSize = 2.5f;
     [SerializeField] private float maxSize = 0.5f;
+    [SerializeField] private float SpeedDifference = 0.5f;
 
 
     [Header("Movement")]
     [SerializeField] private float speed = 25;
 
     private PlayerInputSystem InputSystem;
-    private Rigidbody rb;
+    private Rigidbody2D rb;
 
     private SmartSwitch inflateSwitch;
     private Vector2 moveInput;
@@ -31,7 +32,7 @@ public class PlayerController : MonoBehaviour
 
     void Awake()
     {
-        rb = rb == null ? GetComponent<Rigidbody>() : rb;
+        rb = rb == null ? GetComponent<Rigidbody2D>() : rb;
         InputSystem = new PlayerInputSystem();
     }
 
@@ -99,6 +100,18 @@ public class PlayerController : MonoBehaviour
         this.InflateBubble(-amount);
     }
 
+    void ReletiveVelocity()
+    {
+        Vector2 velocty;
+        float factor = ((airAmout - otherPlayer.airAmout) / 100f);
+        velocty = rb.velocity;
+        if(Mathf.Abs(factor) > 0.15f)
+        {
+            velocty.y = factor * SpeedDifference;
+        }
+        rb.velocity = velocty;
+    }
+
     // Update is called once per frame
     void FixedUpdate()
     {
@@ -109,6 +122,8 @@ public class PlayerController : MonoBehaviour
         {
             TransfareAir(50f);
         }
+
+        ReletiveVelocity();
 
 
     }
