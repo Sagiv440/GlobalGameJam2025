@@ -1,8 +1,8 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
 
-public class PlayerController : MonoBehaviour
+using UnityEngine;
+using UnityEngine.Events;
+
+public class PlayerController : MonoBehaviour , Damageable<DamageLog>
 {
     public enum playerControlls
     { 
@@ -21,6 +21,9 @@ public class PlayerController : MonoBehaviour
 
     [Header("Movement")]
     [SerializeField] private float speed = 25;
+
+    [Header("OnDeath")]
+    [SerializeField] private UnityEvent OnDeath;
 
     private PlayerInputSystem InputSystem;
     private Rigidbody2D rb;
@@ -64,6 +67,11 @@ public class PlayerController : MonoBehaviour
             InputSystem.Player2.Move.Disable();
             InputSystem.Player2.Fire.Disable();
         }
+    }
+    [ContextMenu("Update Player Size")]
+    public void UpdateSize()
+    {
+        InflateBubble(0f);
     }
 
     public void InflateBubble(float amount)
@@ -126,5 +134,19 @@ public class PlayerController : MonoBehaviour
         ReletiveVelocity();
 
 
+    }
+
+    public void OnDamage(DamageLog log)
+    {
+        if(log.source.tag == "Hazerd")
+        {
+            OnDeath.Invoke();
+            GameManager.get.GameOver();
+        }
+    }
+
+    public bool IsDead()
+    {
+        return true;
     }
 }

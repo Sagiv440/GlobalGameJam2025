@@ -8,7 +8,21 @@ public class Hazerd : MonoBehaviour
     {
         if(collision.gameObject.tag == "Player")
         {
-            GameManager.get.GameOver();
+            DamageLog dmg;
+            dmg.source = this.gameObject;
+            dmg.damageAmount = 100f;
+            collision.gameObject.GetComponent<Damageable<DamageLog>>().OnDamage(dmg);
+        }
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.tag == "Player")
+        {
+            DamageLog dmg;
+            dmg.source = this.gameObject;
+            dmg.damageAmount = 100f;
+            collision.gameObject.GetComponent<Damageable<DamageLog>>().OnDamage(dmg);
         }
     }
 }
