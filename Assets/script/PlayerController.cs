@@ -14,6 +14,7 @@ public class PlayerController : MonoBehaviour , Damageable<DamageLog>
     [Header("Air System")]
     [SerializeField] private PlayerController otherPlayer;
     [SerializeField] public float airAmout = 100f;
+    [SerializeField] public float airTransferRate = 80f;
     [SerializeField] private float minSize = 2.5f;
     [SerializeField] private float maxSize = 0.5f;
     [SerializeField] private float SpeedDifference = 0.5f;
@@ -130,7 +131,7 @@ public class PlayerController : MonoBehaviour , Damageable<DamageLog>
 
             if (inflateSwitch.OnHold())
             {
-                TransfareAir(50f);
+                TransfareAir(airTransferRate);
             }
 
             ReletiveVelocity();
