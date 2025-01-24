@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!114 &-498040446515476908
+--- !u!114 &-5867696941849690181
 MonoBehaviour:
   m_ObjectHideFlags: 11
   m_CorrespondingSourceObject: {fileID: 0}
@@ -20,8 +20,8 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Shader Graphs_PositionDarkeningShader
-  m_Shader: {fileID: -6465566751694194690, guid: ac16f8f327124864ba9e3c4bcd24e7da, type: 3}
+  m_Name: fish_M
+  m_Shader: {fileID: -6465566751694194690, guid: 51d36afaefd6c1a42b3b739bf0f00c3c, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
   m_ValidKeywords: []
@@ -36,18 +36,18 @@ Material:
   m_SavedProperties:
     serializedVersion: 3
     m_TexEnvs:
-    - _SampleTexture2D_ff5b046a82ec4ebab2e0be39ea8c969a_Texture_1_Texture2D:
-        m_Texture: {fileID: 2800000, guid: b35f2141ca4b1284d923dfe0bc5a439f, type: 3}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _wallTex:
-        m_Texture: {fileID: 2800000, guid: b35f2141ca4b1284d923dfe0bc5a439f, type: 3}
+    - _Pxelize_076ff8ce0eff49e4b4b14677a3b181e5_Texture2D_520163312_Texture2D:
+        m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
     - _BUILTIN_QueueControl: 0
     - _BUILTIN_QueueOffset: 0
-    - _pixel_amount: 85.76
-    m_Colors: []
+    - _lines: 4.34
+    - _speed: 0.1
+    - _waves: 5
+    m_Colors:
+    - _Color1: {r: 1, g: 0.8260877, b: 0, a: 0}
+    - _Color2: {r: 0.8867924, g: 0.4762571, b: 0, a: 0}
   m_BuildTextureStacks: []
