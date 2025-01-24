@@ -7,8 +7,8 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: WaterBG
-  m_Shader: {fileID: -6465566751694194690, guid: 3e5d0f227130c9043ba238b4786a7e40, type: 3}
+  m_Name: Rays
+  m_Shader: {fileID: -6465566751694194690, guid: 88dff109270597b44b6cf2a6e85371d7, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
   m_ValidKeywords: []
@@ -44,7 +44,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainTex:
-        m_Texture: {fileID: 0}
+        m_Texture: {fileID: 2800000, guid: 3dbf4d9f14e541f45b166bc051096dfd, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MetallicGlossMap:
@@ -59,43 +59,49 @@ Material:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
-    - _Pxelize_5cc3dbf0726f43a294fc3ea9bd73c170_Texture2D_520163312_Texture2D:
-        m_Texture: {fileID: 0}
+    - _SampleTexture2D_33614344f467439ca016f39695b3be93_Texture_1_Texture2D:
+        m_Texture: {fileID: 2800000, guid: 40a79b49c6374614884605a3a6f4a4ba, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _Texture2D:
-        m_Texture: {fileID: 2800000, guid: 4bd889db8b036404eae30234bbd9d6aa, type: 3}
+        m_Texture: {fileID: 2800000, guid: 3dbf4d9f14e541f45b166bc051096dfd, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
+    - _Alpha: 1
     - _BUILTIN_QueueControl: 0
     - _BUILTIN_QueueOffset: 0
     - _BumpScale: 1
-    - _Cutoff: 2.4
+    - _Cutoff: 0.45
     - _DetailNormalMapScale: 1
-    - _DstBlend: 0
+    - _Divide: 2.95
+    - _DstBlend: 10
     - _GlossMapScale: 1
     - _Glossiness: 0.5
     - _GlossyReflections: 1
+    - _Height: 0.6
     - _Metallic: 0
-    - _Mode: 0
+    - _Mode: 3
+    - _Noise_Amount: 0.1
     - _OcclusionStrength: 1
     - _Parallax: 0.02
-    - _Pixel_Amount: 100
-    - _Scale: 0.7
+    - _Pixel_Amount: 1000
+    - _Scale: 1.62
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
-    - _Speed: 0.01
+    - _Speed: 25.12
     - _SrcBlend: 1
     - _UVSec: 0
-    - _ZWrite: 1
+    - _Wave_Lenghth: 1
+    - _ZWrite: 0
     m_Colors:
-    - _Color: {r: 1, g: 1, b: 1, a: 1}
+    - _Color: {r: 0.6749732, g: 0.8953665, b: 0.9056604, a: 1}
+    - _Directiion: {r: 1, g: 0, b: 1, a: 0}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
-    - _UV_Rotation: {r: 219.4, g: 24.36, b: 0, a: 0}
+    - _UV_Rotation: {r: 0, g: 0, b: 0, a: 0}
   m_BuildTextureStacks: []
---- !u!114 &4982091312714780605
+--- !u!114 &6564151577685004202
 MonoBehaviour:
   m_ObjectHideFlags: 11
   m_CorrespondingSourceObject: {fileID: 0}
