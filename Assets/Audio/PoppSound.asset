@@ -10,14 +10,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 37b9366814727614ead8843b1db709f8, type: 3}
-  m_Name: sfx_DoctorMachine
+  m_Name: PoppSound
   m_EditorClassIdentifier: 
   clips:
-  - clip: {fileID: 0}
+  - clip: {fileID: 8300000, guid: 50e5d54a69d6b4543a016c665e9f12c6, type: 3}
+    loop: 0
+  - clip: {fileID: 8300000, guid: 8e964b715a811464e82529c35987d43b, type: 3}
+    loop: 0
+  - clip: {fileID: 8300000, guid: 028da1dc76fc74a9881aa389a9f19e60, type: 3}
     loop: 0
   audioMixer: {fileID: 24300002, guid: 273b2e6f1849f43428f5651cfc0390ba, type: 2}
-  volume: {x: 0.2, y: 0.2}
+  volume: {x: 0.5, y: 0.5}
   pitch: {x: 1, y: 1}
   loop: 0
   playOrder: 0
-  playIndex: 0
+  playIndex: 2
