@@ -20,7 +20,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Shader Graphs_PositionDarkeningShader
+  m_Name: BGswalls
   m_Shader: {fileID: -6465566751694194690, guid: ac16f8f327124864ba9e3c4bcd24e7da, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
