@@ -11,6 +11,9 @@
         },
         {
             "m_Id": "0fa21df4c3a84cc9aa222ff8ddd17d96"
+        },
+        {
+            "m_Id": "8e4ffb92d89045fa8c4e0147a50e18e5"
         }
     ],
     "m_Keywords": [],
@@ -267,6 +270,9 @@
         },
         {
             "m_Id": "0fa21df4c3a84cc9aa222ff8ddd17d96"
+        },
+        {
+            "m_Id": "8e4ffb92d89045fa8c4e0147a50e18e5"
         }
     ]
 }
@@ -727,6 +733,33 @@
 
 {
     "m_SGVersion": 0,
+    "m_Type": "UnityEditor.ShaderGraph.Internal.Texture2DArrayShaderProperty",
+    "m_ObjectId": "8e4ffb92d89045fa8c4e0147a50e18e5",
+    "m_Guid": {
+        "m_GuidSerialized": "4f5db466-e182-40dd-bfaf-d4499953b0a1"
+    },
+    "m_Name": "Texture2D Array",
+    "m_DefaultRefNameVersion": 1,
+    "m_RefNameGeneratedByDisplayName": "Texture2D Array",
+    "m_DefaultReferenceName": "_Texture2D_Array",
+    "m_OverrideReferenceName": "",
+    "m_GeneratePropertyBlock": true,
+    "m_UseCustomSlotLabel": false,
+    "m_CustomSlotLabel": "",
+    "m_DismissedVersion": 0,
+    "m_Precision": 0,
+    "overrideHLSLDeclaration": false,
+    "hlslDeclarationOverride": 0,
+    "m_Hidden": false,
+    "m_Value": {
+        "m_SerializedTexture": "{\"textureArray\":{\"instanceID\":0}}",
+        "m_Guid": ""
+    },
+    "m_Modifiable": true
+}
+
+{
+    "m_SGVersion": 0,
     "m_Type": "UnityEditor.ShaderGraph.SubGraphOutputNode",
     "m_ObjectId": "996dfd12f1214b5d885eacf3fe5ee78a",
     "m_Group": {
@@ -737,10 +770,10 @@
         "m_Expanded": true,
         "m_Position": {
             "serializedVersion": "2",
-            "x": -525.333251953125,
-            "y": -48.000030517578128,
-            "width": 122.0,
-            "height": 78.66671752929688
+            "x": -164.66659545898438,
+            "y": 113.99999237060547,
+            "width": 121.99999237060547,
+            "height": 78.66666412353516
         }
     },
     "m_Slots": [
@@ -1017,10 +1050,10 @@
         "m_Expanded": true,
         "m_Position": {
             "serializedVersion": "2",
-            "x": -956.0650024414063,
-            "y": -48.2725715637207,
-            "width": 0.0,
-            "height": 0.0
+            "x": -1110.6666259765625,
+            "y": 370.6666564941406,
+            "width": 140.00006103515626,
+            "height": 35.999969482421878
         }
     },
     "m_Slots": [
