@@ -30,6 +30,7 @@ public class PlayArea : MonoBehaviour
             if (transform.position.y > maxHight.variable.value)
             {
                 GameManager.get.WinLevel();
+                startg = false;
             }
         }
     }

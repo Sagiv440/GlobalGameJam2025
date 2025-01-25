@@ -132,7 +132,7 @@ public class PlayerController : MonoBehaviour , Damageable<DamageLog>
             float distance = Mathf.Abs(curHight.value - this.transform.position.y);
             if (distance > 2.5f)
             {
-                velocty.y = 0.15f;
+                //velocty.y = 0.15f;
             }
         }
         rb.velocity = velocty;

@@ -2,11 +2,13 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class Octopus : MonoBehaviour
 {
     [SerializeField] private Animator anim;
     [SerializeField] private PlayArea pArea;
+    [SerializeField] private UnityEvent OnSnees;
     [Range(0, 1)]
     [SerializeField] float complit = 0.7f;
     private SmartSwitch gameSwitch;
@@ -16,7 +18,8 @@ public class Octopus : MonoBehaviour
         if (gameSwitch.OnPress())
         {
             anim.Play("start");
-            StartCoroutine(OnAnimEnd(anim, complit, ()=> { pArea.TriggerStartGame(); }));
+            StartCoroutine(OnAnimEnd(anim, complit, () => { OnSnees.Invoke(); }));
+            StartCoroutine(OnAnimEnd(anim, 1f, ()=> { pArea.TriggerStartGame(); }));
         }
     }
 

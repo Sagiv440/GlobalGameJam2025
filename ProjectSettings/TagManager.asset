@@ -12,8 +12,8 @@ TagManager:
   - 
   - Water
   - UI
-  - 
-  - 
+  - forground
+  - octopus
   - 
   - 
   - 
@@ -41,4 +41,10 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Forground
+    uniqueID: 1715651369
+    locked: 0
+  - name: Octy
+    uniqueID: 1111138905
     locked: 0

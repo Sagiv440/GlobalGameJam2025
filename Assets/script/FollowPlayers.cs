@@ -1,11 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class FollowPlayers : MonoBehaviour
 {
     [SerializeField] private Transform startTarget;
     [SerializeField] private Transform camTarget;
+    [SerializeField] private UnityEvent OnGamePlay;
     public GameObject[] players;
     public Camera cam;
 
@@ -76,5 +78,6 @@ public class FollowPlayers : MonoBehaviour
             yield return null;
         }
         follow = true;
+        OnGamePlay.Invoke();
     }
 }
