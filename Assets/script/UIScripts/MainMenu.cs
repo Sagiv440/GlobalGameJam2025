@@ -1,15 +1,21 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using ScriptableObjects;
 using UnityEngine.SceneManagement;
 
 public class MainMenu : MonoBehaviour
 {
     [SerializeField] private GameObject ContinueButton;
+    [SerializeField] private SoundEffectSO MainMusicTheme;
 
     private Animator[] allAnim;
     private void Start()
     {
+        if(!MainMusicTheme.IsPlaying())
+        {
+            MainMusicTheme.Play();
+        }
         allAnim = GetComponentsInChildren<Animator>(true);
 
         foreach (var anim in allAnim)

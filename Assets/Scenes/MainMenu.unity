@@ -581,6 +581,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ContinueButton: {fileID: 0}
+  MainMusicTheme: {fileID: 11400000, guid: 84f4be36c1915d04db59b08b7492939f, type: 2}
 --- !u!1 &1337375858
 GameObject:
   m_ObjectHideFlags: 0

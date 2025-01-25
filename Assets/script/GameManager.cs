@@ -34,18 +34,24 @@ public class GameManager : MonoBehaviour
 
     public void GameOver()
     {
-        state = gameState.END;
-        //Time.timeScale = 0f;
-        StartCoroutine(DelayGameOver());
-        Debug.Log("Game Over");
+        if (state != gameState.END)
+        {
+            state = gameState.END;
+            //Time.timeScale = 0f;
+            StartCoroutine(DelayGameOver());
+            Debug.Log("Game Over");
+        }
     }
 
     public void WinLevel()
     {
-        state = gameState.END;
-        //Time.timeScale = 0f;
-        StartCoroutine(DelayEnd());
-        Debug.Log("You Win");
+        if (state != gameState.END)
+        {
+            state = gameState.END;
+            //Time.timeScale = 0f;
+            StartCoroutine(DelayEnd());
+            Debug.Log("You Win");
+        }
     }
 
     private void Update()

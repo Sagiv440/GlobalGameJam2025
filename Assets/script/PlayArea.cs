@@ -23,7 +23,7 @@ public class PlayArea : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        if(startg)
+        if(startg && GameManager.get.state == GameManager.gameState.GAME)
         {
             transform.position += Vector3.up * speed * Time.deltaTime;
             if(curHight != null) curHight.value = transform.position.y - gYpos;

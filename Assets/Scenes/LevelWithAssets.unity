@@ -6139,7 +6139,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1029038991
 RectTransform:
   m_ObjectHideFlags: 0
@@ -9739,7 +9739,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5947863092656739754, guid: d4f5cc4bc950cad4689436c09087983b, type: 3}
       propertyPath: OnGameOver.m_PersistentCalls.m_Calls.Array.size
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 5947863092656739754, guid: d4f5cc4bc950cad4689436c09087983b, type: 3}
       propertyPath: OnGameStart.m_PersistentCalls.m_Calls.Array.size
@@ -9756,6 +9756,10 @@ PrefabInstance:
     - target: {fileID: 5947863092656739754, guid: d4f5cc4bc950cad4689436c09087983b, type: 3}
       propertyPath: OnGameOver.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
       value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5947863092656739754, guid: d4f5cc4bc950cad4689436c09087983b, type: 3}
+      propertyPath: OnGameOver.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5947863092656739754, guid: d4f5cc4bc950cad4689436c09087983b, type: 3}
       propertyPath: OnGameStart.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
@@ -9780,7 +9784,7 @@ PrefabInstance:
     - target: {fileID: 5947863092656739754, guid: d4f5cc4bc950cad4689436c09087983b, type: 3}
       propertyPath: OnGameOver.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
-      objectReference: {fileID: 542840343}
+      objectReference: {fileID: 11400000, guid: fdb3cdbeab5f23c488605610147137cc, type: 2}
     - target: {fileID: 5947863092656739754, guid: d4f5cc4bc950cad4689436c09087983b, type: 3}
       propertyPath: OnGameStart.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -9818,6 +9822,10 @@ PrefabInstance:
       value: ChangePanel
       objectReference: {fileID: 0}
     - target: {fileID: 5947863092656739754, guid: d4f5cc4bc950cad4689436c09087983b, type: 3}
+      propertyPath: OnGameOver.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: Play
+      objectReference: {fileID: 0}
+    - target: {fileID: 5947863092656739754, guid: d4f5cc4bc950cad4689436c09087983b, type: 3}
       propertyPath: OnGameStart.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
       value: 2
       objectReference: {fileID: 0}
@@ -9846,6 +9854,10 @@ PrefabInstance:
       value: PanelScript, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 5947863092656739754, guid: d4f5cc4bc950cad4689436c09087983b, type: 3}
+      propertyPath: OnGameOver.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: ScriptableObjects.SoundEffectSO, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 5947863092656739754, guid: d4f5cc4bc950cad4689436c09087983b, type: 3}
       propertyPath: OnGameWin.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_IntArgument
       value: 2
       objectReference: {fileID: 0}
@@ -9855,6 +9867,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5947863092656739754, guid: d4f5cc4bc950cad4689436c09087983b, type: 3}
       propertyPath: OnGameOver.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_IntArgument
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5947863092656739754, guid: d4f5cc4bc950cad4689436c09087983b, type: 3}
+      propertyPath: OnGameOver.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_IntArgument
       value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 5947863092656739754, guid: d4f5cc4bc950cad4689436c09087983b, type: 3}
@@ -9887,6 +9903,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5947863092656739754, guid: d4f5cc4bc950cad4689436c09087983b, type: 3}
       propertyPath: OnGameOver.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 5947863092656739754, guid: d4f5cc4bc950cad4689436c09087983b, type: 3}
+      propertyPath: OnGameOver.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 5947863092656739754, guid: d4f5cc4bc950cad4689436c09087983b, type: 3}
