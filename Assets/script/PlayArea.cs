@@ -7,14 +7,26 @@ public class PlayArea : MonoBehaviour
     public float speed = 3f;
     [SerializeField] private FloatVariable curHight;
     [SerializeField] private FloatReference maxHight;
+    private bool startg;
+    private float gYpos;
+    private void Start()
+    {
+        gYpos = transform.position.y;
+        if (curHight != null) curHight.value = 0;
+    }
+
+    public void TriggerStartGame()
+    {
+        startg = true;
+    }
 
     // Update is called once per frame
     void FixedUpdate()
     {
-        if(GameManager.get.state == GameManager.gameState.GAME)
+        if(startg)
         {
             transform.position += Vector3.up * speed * Time.deltaTime;
-            if(curHight != null) curHight.value = transform.position.y;
+            if(curHight != null) curHight.value = transform.position.y - gYpos;
             if (transform.position.y > maxHight.variable.value)
             {
                 GameManager.get.WinLevel();
