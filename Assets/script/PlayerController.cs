@@ -1,4 +1,6 @@
-
+using System;
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -13,11 +15,14 @@ public class PlayerController : MonoBehaviour , Damageable<DamageLog>
 
     [Header("Air System")]
     [SerializeField] private PlayerController otherPlayer;
+    [SerializeField] private FloatVariable curHight;
+    [SerializeField] public GameObject AirBubbls;
     [SerializeField] public float airAmout = 100f;
     [SerializeField] public float airTransferRate = 80f;
     [SerializeField] private float minSize = 2.5f;
     [SerializeField] private float maxSize = 0.5f;
     [SerializeField] private float SpeedDifference = 0.5f;
+    [SerializeField] private Animator anim;
 
 
     [Header("Movement")]
@@ -38,6 +43,7 @@ public class PlayerController : MonoBehaviour , Damageable<DamageLog>
 
     void Awake()
     {
+        anim = anim == null ? GetComponentInChildren<Animator>() : anim;
         rb = rb == null ? GetComponent<Rigidbody2D>() : rb;
         InputSystem = new PlayerInputSystem();
     }
@@ -117,9 +123,17 @@ public class PlayerController : MonoBehaviour , Damageable<DamageLog>
         Vector2 velocty;
         float factor = ((airAmout - otherPlayer.airAmout) / 100f);
         velocty = rb.velocity;
-        if(Mathf.Abs(factor) > 0.15f)
+        if(Mathf.Abs(factor) > 0.2f)
         {
             velocty.y = factor * SpeedDifference;
+        }
+        else
+        {
+            float distance = Mathf.Abs(curHight.value - this.transform.position.y);
+            if (distance > 2.5f)
+            {
+                velocty.y = 0.15f;
+            }
         }
         rb.velocity = velocty;
     }
@@ -127,7 +141,7 @@ public class PlayerController : MonoBehaviour , Damageable<DamageLog>
     // Update is called once per frame
     void FixedUpdate()
     {
-        t += Time.deltaTime * Random.Range(15f, 20f);
+        t += Time.deltaTime * UnityEngine.Random.Range(15f, 20f);
         if (GameManager.get.state == GameManager.gameState.GAME)
         {
             UpdateMoveInput();
@@ -135,7 +149,12 @@ public class PlayerController : MonoBehaviour , Damageable<DamageLog>
 
             if (inflateSwitch.OnHold())
             {
+                otherPlayer.AirBubbls.SetActive(true);
                 otherPlayer.TransfareAir(airTransferRate);
+            }
+            else
+            {
+                otherPlayer.AirBubbls.SetActive(false);
             }
 
             ReletiveVelocity();
@@ -147,9 +166,30 @@ public class PlayerController : MonoBehaviour , Damageable<DamageLog>
     {
         if(log.source.tag == "Hazerd")
         {
+            anim.Play("Die");
             OnDeath.Invoke();
             GameManager.get.GameOver();
+            StartCoroutine(OnAnimEnd(anim, () => { this.gameObject.SetActive(false); }));
         }
+        if(log.source.tag == "Finish")
+        {
+            anim.Play("Die");
+            OnDeath.Invoke();
+            StartCoroutine(OnAnimEnd(anim, () => { this.gameObject.SetActive(false); }));
+        }
+    }
+
+    IEnumerator OnAnimEnd(Animator anim, Action action)
+    {
+        yield return null;
+        yield return null;
+        yield return null;
+        yield return null;
+        while (anim.GetCurrentAnimatorStateInfo(0).normalizedTime < 1f)
+        {
+            yield return null;
+        }
+        action.Invoke();
     }
 
     public bool IsDead()

@@ -9,7 +9,7 @@ EditorBuildSettings:
     path: Assets/Scenes/MainMenu.unity
     guid: 7ba962ce95e5cda4cb840a74841c68c3
   - enabled: 1
-    path: Assets/Scenes/MechenicsTest.unity
-    guid: 9fc0d4010bbf28b4594072e72b8655ab
+    path: Assets/Scenes/LevelWithAssets.unity
+    guid: 62703a4c811d65346ae35b26b3b90202
   m_configObjects:
     com.unity.input.settings: {fileID: 11400000, guid: 30f4b61baf65d014b9063eaa1767f8ca, type: 2}

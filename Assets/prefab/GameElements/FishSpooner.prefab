@@ -1,0 +1,112 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &340753738119344505
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 9191036585608096636}
+  - component: {fileID: 4822519316624457817}
+  m_Layer: 0
+  m_Name: FishSpooner
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &9191036585608096636
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 340753738119344505}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 13.61, y: 15.54, z: -0.17}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 8905090253894481348}
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &4822519316624457817
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 340753738119344505}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c817684022aa65d4db2c2c1f1ab6a14b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  minSpeed: 0.1
+  maxSpeed: 0.2
+  destinaton: {fileID: 8905090253894481348}
+  fishs:
+  - {fileID: 6789166457144283561, guid: 966519dd275ec974e882e11932dd6320, type: 3}
+  - {fileID: 7244359805449560261, guid: 7ffc5fa0dfa57a446bb8eba7ff01c998, type: 3}
+  - {fileID: 8200735837478558466, guid: 30dab57aa86fd0b4c914291a3780caf6, type: 3}
+  - {fileID: 8538232055855823045, guid: 34f30500c8da16f42a27828cbe760d20, type: 3}
+  - {fileID: 3068341873191898093, guid: e67df65749ef79c4183f5bc075dcd688, type: 3}
+  flowCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0.09786997
+      outSlope: 0.09786997
+      tangentMode: 0
+      weightedMode: 3
+      inWeight: 0
+      outWeight: 0.66994554
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 0.07634263
+      outSlope: 0.07634263
+      tangentMode: 0
+      weightedMode: 3
+      inWeight: 0.5560194
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  curHight: {fileID: 11400000, guid: 913479ef2f959374e815226d2a6142a7, type: 2}
+--- !u!1 &1350686580094587561
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8905090253894481348}
+  m_Layer: 0
+  m_Name: Target
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8905090253894481348
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1350686580094587561}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 6.54, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 9191036585608096636}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
