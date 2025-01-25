@@ -16,7 +16,7 @@ MonoBehaviour:
   - clip: {fileID: 8300000, guid: deb442b5fd9c69e44b158365f2beb2fc, type: 3}
     loop: 1
   audioMixer: {fileID: 0}
-  volume: {x: 0.5, y: 0.5}
+  volume: {x: 1, y: 1}
   pitch: {x: 1, y: 1}
   loop: 1
   playOrder: 0

@@ -89,7 +89,7 @@ public class PlayerController : MonoBehaviour , Damageable<DamageLog>
         float relSize = maxSize - minSize;
 
         this.transform.localScale = (Vector3.one * minSize) +  Vector3.one * relSize * (airAmout / 100f);
-        AirBubbls.transform.localScale = this.transform.localScale + Vector3.one * 0.5f;
+        AirBubbls.transform.localScale = this.transform.localScale - Vector3.one * 0.5f;
     }
 
     private void UpdateMoveInput()
@@ -167,8 +167,11 @@ public class PlayerController : MonoBehaviour , Damageable<DamageLog>
 
     public void OnDamage(DamageLog log)
     {
+
         if(log.source.tag == "Hazerd")
         {
+
+            otherPlayer.TotalDearth();
             anim.Play("Die");
             OnDeath.Invoke();
             GameManager.get.GameOver();
@@ -180,6 +183,14 @@ public class PlayerController : MonoBehaviour , Damageable<DamageLog>
             OnDeath.Invoke();
             StartCoroutine(OnAnimEnd(anim, () => { this.gameObject.SetActive(false); }));
         }
+    }
+
+    public void TotalDearth()
+    {
+        anim.Play("Die");
+        OnDeath.Invoke();
+        //GameManager.get.GameOver();
+        StartCoroutine(OnAnimEnd(anim, () => { this.gameObject.SetActive(false); }));
     }
 
     IEnumerator OnAnimEnd(Animator anim, Action action)
