@@ -56,11 +56,6 @@ public class GameManager : MonoBehaviour
             OnGameStart.Invoke();
         }
         StartSwitch.Update(state == gameState.GAME);
-        threshHoldSwitch.Update(PlayerDistance.value > DeathTheashHold);
-        if (threshHoldSwitch.OnPress())
-        {
-            GameOver();
-        }
     }
 
     IEnumerator DelayEnd()

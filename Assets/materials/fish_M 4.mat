@@ -48,6 +48,6 @@ Material:
     - _speed: 0.1
     - _waves: 5
     m_Colors:
-    - _Color1: {r: 1, g: 0, b: 0.16312027, a: 0}
+    - _Color1: {r: 0, g: 0.711586, b: 1, a: 0}
     - _Color2: {r: 1, g: 0.31739217, b: 0, a: 0}
   m_BuildTextureStacks: []

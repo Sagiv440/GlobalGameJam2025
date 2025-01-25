@@ -32,24 +32,6 @@ public class FollowPlayers : MonoBehaviour
         players = GameObject.FindGameObjectsWithTag("Player");
     }
 
-    private void CalcualteDistance()
-    {
-        float minY = Mathf.Infinity;
-        float maxY = 0f;
-
-        float minX = Mathf.Infinity;
-        float maxX = 0f;
-
-        foreach (var player in players)
-        {
-            minY = minY > player.transform.position.y ? player.transform.position.y : minY;
-            maxY = maxY < player.transform.position.y ? player.transform.position.y : maxY;
-
-            minX = minX > player.transform.position.x ? player.transform.position.x : minX;
-            maxX = maxX < player.transform.position.x ? player.transform.position.x : maxX;
-        }
-        totalDistance.value = (maxY - minY)*0.5f;
-    }
 
     private void FixedUpdate()
     {
@@ -60,7 +42,8 @@ public class FollowPlayers : MonoBehaviour
         }
         if (gameSwitch.OnHold())
         {
-            CalcualteDistance();
+            //CalcualteDistance();
+            /*CalcualteDistance();
             if (totalDistance.value * powerFactor < (minFrameSize))
             {
                 targetSize = minFrameSize;
@@ -74,6 +57,8 @@ public class FollowPlayers : MonoBehaviour
                 targetSize = totalDistance.value * powerFactor;
             }
             cam.orthographicSize = Mathf.Lerp(cam.orthographicSize, targetSize, Time.deltaTime);
+            */
+
 
             if (follow)
                 this.transform.position = Vector3.Lerp(this.transform.position, camTarget.position, Time.deltaTime *10f);
