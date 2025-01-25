@@ -89,6 +89,7 @@ public class PlayerController : MonoBehaviour , Damageable<DamageLog>
         float relSize = maxSize - minSize;
 
         this.transform.localScale = (Vector3.one * minSize) +  Vector3.one * relSize * (airAmout / 100f);
+        AirBubbls.transform.localScale = this.transform.localScale + Vector3.one * 0.5f;
     }
 
     private void UpdateMoveInput()

@@ -42,6 +42,12 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: Player
+    uniqueID: 1091634465
+    locked: 0
+  - name: PEffect
+    uniqueID: 4192691903
+    locked: 0
   - name: Forground
     uniqueID: 1715651369
     locked: 0

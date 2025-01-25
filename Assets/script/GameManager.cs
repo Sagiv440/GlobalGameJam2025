@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
+using ScriptableObjects;
 
 public class GameManager : MonoBehaviour
 { 
@@ -17,6 +18,7 @@ public class GameManager : MonoBehaviour
     public static GameManager get;
     [SerializeField] private FloatVariable PlayerDistance;
     [SerializeField] private float DeathTheashHold = 10f;
+    [SerializeField] private SoundEffectSO MainMenuTheme;
 
     [SerializeField] private float endDelayTime = 2f;
     [SerializeField] private UnityEvent OnGameStart;
@@ -30,6 +32,7 @@ public class GameManager : MonoBehaviour
     {
         state = gameState.START;
         get = this;
+        MainMenuTheme.Play();
     }
 
     public void GameOver()
