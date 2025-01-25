@@ -149,12 +149,14 @@ public class PlayerController : MonoBehaviour , Damageable<DamageLog>
 
             if (inflateSwitch.OnHold())
             {
-                otherPlayer.AirBubbls.SetActive(true);
+
+                //otherPlayer.AirBubbls.transform.rotation = Quaternion.LookRotation(Vector3.Normalize(this.transform.position - otherPlayer.transform.position), Vector3.up);
+                this.AirBubbls.SetActive(true);
                 otherPlayer.TransfareAir(airTransferRate);
             }
             else
             {
-                otherPlayer.AirBubbls.SetActive(false);
+                this.AirBubbls.SetActive(false);
             }
 
             ReletiveVelocity();
