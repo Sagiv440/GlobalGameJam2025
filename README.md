@@ -13,7 +13,7 @@ Bubble Bi & Bubble Boo is a two-player cooperative game that dives deep into tea
 # Special Tanks to:
 - [**Sagiv Reuben**](https://www.linkedin.com/in/sagiv-reuben-1264341b9/): Programmer, Game Developer
 - [**Dan Shomrony**](https://www.linkedin.com/in/danshom/): Artist, GameDesign
-- [**Dekel Carolla**](https://www.linkedin.com/in/dekel-carolla-7370a7183/): Tech Artist, VFX, Animation
+- [**Dekel Carolla**](https://www.linkedin.com/in/dekel-carolla-7370a7183/): GameDesign, Tech Artist, VFX, Animation
 - [**Alon Kaplan**](https://globalgamejam.org/users/alon-kaplan): Music
   
 # Screen Shots
